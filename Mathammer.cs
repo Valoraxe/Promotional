@@ -77,7 +77,7 @@ namespace Mathammer
         private void AddArmies()
         {
             string ArmyName = "";
-            MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=Blo0d4kh0rne;");
+            MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=password;");
             MyConnect.Open();
             MySqlCommand MyCommand = new MySqlCommand("SHOW TABLES from mathammer WHERE Tables_in_mathammer != 'armoury'", MyConnect);
             MySqlDataReader Reader = MyCommand.ExecuteReader();
@@ -115,7 +115,7 @@ namespace Mathammer
                     break;
             }
             string UnitName = "";
-            MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=Blo0d4kh0rne;");
+            MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=password;");
             MyConnect.Open();
             MySqlCommand MyCommand = new MySqlCommand("SELECT UnitName From " + ArmyName, MyConnect);
             MySqlDataReader Reader = MyCommand.ExecuteReader();
@@ -152,7 +152,7 @@ namespace Mathammer
 
         private void AddCommand(string ArmyName, string UnitName, int SwitchCase)
         {
-            MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=Blo0d4kh0rne;");
+            MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=password;");
             MyConnect.Open();
             MySqlCommand MyCommand = new MySqlCommand("SELECT ChampEnable, BannerEnable, MusicEnable, RankFiles FROM " + ArmyName + " WHERE UnitName = '" + UnitName + "'", MyConnect);
             MySqlDataReader Reader = MyCommand.ExecuteReader();
@@ -230,7 +230,7 @@ namespace Mathammer
 
         private void AddEquipment(string UnitName, int SwitchCase)
         { 
-            MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=Blo0d4kh0rne;");
+            MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=password;");
             MyConnect.Open();
             MySqlCommand MyCommand = new MySqlCommand("SELECT SpearEnable, DualEnable, HalberdEnable, GreatEnable, FlailEnable, LanceEnable, MorningEnable, ShieldEnable, LArmourEnable FROM armoury WHERE UnitName = '" + UnitName + "'", MyConnect);
             MySqlDataReader Reader = MyCommand.ExecuteReader();
@@ -372,7 +372,7 @@ namespace Mathammer
             {
                 string UnitName = "";
                 UnitName = UnitBox1.SelectedItem.ToString();
-                MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=Blo0d4kh0rne;");
+                MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=password;");
                 MyConnect.Open();
                 MySqlCommand MyCommand = new MySqlCommand("SELECT DualEnable, HalberdEnable, FlailEnable, GreatEnable FROM armoury WHERE UnitName = '" + UnitName + "'", MyConnect);
                 MySqlDataReader Reader = MyCommand.ExecuteReader();
@@ -408,7 +408,7 @@ namespace Mathammer
             {
                 string UnitName = "";
                 UnitName = UnitBox2.SelectedItem.ToString();
-                MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=Blo0d4kh0rne;");
+                MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=password;");
                 MyConnect.Open();
                 MySqlCommand MyCommand = new MySqlCommand("SELECT DualEnable, HalberdEnable, FlailEnable, GreatEnable FROM armoury WHERE UnitName = '" + UnitName + "'", MyConnect);
                 MySqlDataReader Reader = MyCommand.ExecuteReader();
@@ -481,7 +481,7 @@ namespace Mathammer
                     UnitName = UnitBox2.SelectedItem.ToString();
                     break;
             }
-            MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=Blo0d4kh0rne;");
+            MySqlConnection MyConnect = new MySqlConnection("SERVER=localhost;DATABASE=mathammer;UID=root;PASSWORD=password;");
             MyConnect.Open();
             MySqlCommand MyCommand = new MySqlCommand("SELECT MinSize, Movement, WeaponSkill, BalisticSkill, Strength, Toughness, Wounds, Initative, Attacks, Leadership, ArmourValue FROM " + ArmyName + " WHERE UnitName = '" + UnitName + "'", MyConnect);
             MySqlDataReader Reader = MyCommand.ExecuteReader();
